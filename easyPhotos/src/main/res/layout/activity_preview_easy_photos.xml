@@ -26,7 +26,7 @@
             <RelativeLayout
                 android:id="@+id/m_top_bar"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="56dp"
                 android:layout_gravity="top"
                 android:background="@color/easy_photos_bar_primary"
                 android:clickable="true"
@@ -35,11 +35,11 @@
 
                 <ImageView
                     android:id="@+id/iv_back"
-                    android:layout_width="42dp"
+                    android:layout_width="56dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
-                    android:padding="10dp"
+                    android:padding="16dp"
                     app:srcCompat="@drawable/ic_arrow_back_easy_photos" />
 
                 <View
@@ -61,7 +61,8 @@
                     android:gravity="center"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:textColor="@color/easy_photos_fg_primary" />
+                    android:textColor="@color/easy_photos_fg_primary"
+                    android:textSize="20sp" />
 
                 <com.huantansheng.easyphotos.ui.widget.PressedTextView
                     android:id="@+id/tv_done"
@@ -127,31 +128,33 @@
             <TextView
                 android:id="@+id/tv_original"
                 android:layout_width="wrap_content"
-                android:layout_height="42dp"
+                android:layout_height="56dp"
                 android:layout_below="@+id/fl_fragment"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/original_easy_photos"
                 android:textColor="@color/easy_photos_fg_primary"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
             <TextView
                 android:id="@+id/tv_selector"
                 android:layout_width="wrap_content"
-                android:layout_height="42dp"
+                android:layout_height="56dp"
                 android:layout_below="@+id/fl_fragment"
                 android:layout_toStartOf="@+id/iv_selector"
                 android:layout_toLeftOf="@+id/iv_selector"
                 android:gravity="center"
                 android:text="@string/selector_easy_photos"
                 android:textColor="@color/easy_photos_fg_primary"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/iv_selector"
                 android:layout_width="wrap_content"
-                android:layout_height="42dp"
+                android:layout_height="56dp"
                 android:layout_below="@+id/fl_fragment"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
