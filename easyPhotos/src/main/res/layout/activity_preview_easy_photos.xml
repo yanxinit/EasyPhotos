@@ -48,6 +48,7 @@
                     android:layout_height="22dp"
                     android:layout_alignEnd="@+id/iv_back"
                     android:layout_alignRight="@+id/iv_back"
+                    android:visibility="gone"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
                     android:background="@color/easy_photos_bar_primary_dark" />

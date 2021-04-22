@@ -200,6 +200,7 @@
             android:layout_height="18dp"
             android:background="@color/easy_photos_bar_primary_dark"
             app:layout_constraintBottom_toBottomOf="@+id/m_tool_bar"
+            android:visibility="gone"
             app:layout_constraintLeft_toRightOf="@+id/iv_back"
             app:layout_constraintTop_toTopOf="@+id/m_tool_bar" />
 
