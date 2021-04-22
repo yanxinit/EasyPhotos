@@ -25,6 +25,7 @@ public class LoadingDialog extends Dialog {
     public static LoadingDialog get(Context context) {
         LoadingDialog loading = new LoadingDialog(context);
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_loading_easy_photos, null);
+        loading.getWindow().setDimAmount(0);
         loading.setContentView(view);
         loading.setCancelable(false);
         loading.setCanceledOnTouchOutside(false);
