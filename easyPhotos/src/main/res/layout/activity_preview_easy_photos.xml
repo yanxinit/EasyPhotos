@@ -1,5 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/m_root_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -48,10 +49,10 @@
                     android:layout_height="22dp"
                     android:layout_alignEnd="@+id/iv_back"
                     android:layout_alignRight="@+id/iv_back"
-                    android:visibility="gone"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
-                    android:background="@color/easy_photos_bar_primary_dark" />
+                    android:background="@color/easy_photos_bar_primary_dark"
+                    android:visibility="invisible" />
 
                 <com.huantansheng.easyphotos.ui.widget.PressedTextView
                     android:id="@+id/tv_number"
@@ -63,7 +64,8 @@
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:textColor="@color/easy_photos_fg_primary"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    tools:text="123" />
 
                 <com.huantansheng.easyphotos.ui.widget.PressedTextView
                     android:id="@+id/tv_done"

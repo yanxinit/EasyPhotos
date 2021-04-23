@@ -43,6 +43,7 @@ public class Setting {
     public static boolean showGif = false;
     public static boolean showVideo = false;
     public static boolean showCleanMenu = true;
+    public static boolean showSelectAll = true;
     public static long videoMinSecond = 0L;
     public static long videoMaxSecond = Long.MAX_VALUE;
     public static ImageEngine imageEngine = null;

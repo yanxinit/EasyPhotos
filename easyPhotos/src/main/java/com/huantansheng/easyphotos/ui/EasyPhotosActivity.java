@@ -182,7 +182,8 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
         if (Setting.isOnlyVideo()) {
             tvTitle.setText(R.string.video_selection_easy_photos);
         }
-        findViewById(R.id.iv_second_menu).setVisibility(Setting.showPuzzleMenu || Setting.showCleanMenu || Setting.showOriginalMenu ? View.VISIBLE : View.GONE);
+        findViewById(R.id.iv_second_menu).setVisibility(
+                Setting.showPuzzleMenu || Setting.showCleanMenu || Setting.showOriginalMenu || Setting.showSelectAll ? View.VISIBLE : View.GONE);
         setClick(R.id.iv_back);
     }
 
@@ -745,7 +746,7 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
 
         initAlbumItems();
         shouldShowMenuDone();
-        setClick(R.id.iv_album_items, R.id.tv_clear, R.id.iv_second_menu, R.id.tv_puzzle);
+        setClick(R.id.iv_album_items, R.id.tv_clear, R.id.iv_second_menu, R.id.tv_puzzle, R.id.tv_select_all);
         setClick(tvAlbumItems, rootViewAlbumItems, tvDone, tvOriginal, tvPreview, ivCamera);
 
     }
@@ -792,6 +793,16 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
                 return;
             }
             Result.removeAll();
+            photosAdapter.change();
+            shouldShowMenuDone();
+            processSecondMenu();
+        } else if (R.id.tv_select_all == id) {
+            Result.removeAll();
+            for (Object o : photosAdapter.getData()) {
+                if (Result.count() >= Setting.count)
+                    break;
+                Result.addPhoto((Photo) o);
+            }
             photosAdapter.change();
             shouldShowMenuDone();
             processSecondMenu();
@@ -1008,7 +1019,6 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
             if (Setting.isOnlyVideo()) {
                 Toast.makeText(getApplicationContext(), getString(R.string.selector_reach_max_video_hint_easy_photos
                         , Setting.count), Toast.LENGTH_SHORT).show();
-
             } else if (Setting.showVideo) {
                 Toast.makeText(getApplicationContext(), getString(R.string.selector_reach_max_hint_easy_photos,
                         Setting.count), Toast.LENGTH_SHORT).show();

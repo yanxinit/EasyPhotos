@@ -14,7 +14,7 @@
 
     <string name="selector_preview_easy_photos">预览</string>
 
-    <string name="selector_reach_max_hint_easy_photos">超出最大选择数</string>
+    <string name="selector_reach_max_hint_easy_photos">超出最大选择数%d</string>
 
     <string name="selector_reach_max_image_hint_easy_photos">最多只能选择%d张图片</string>
 
@@ -67,6 +67,8 @@
     <string name="video_selection_easy_photos">视频选择</string>
 
     <string name="puzzle_easy_photos">拼一张</string>
+
+    <string name="select_all">全选</string>
 
     <string name="select_puzzle_photos">请选择2 \- 9张照片</string>
 

@@ -1,10 +1,6 @@
 package com.huantansheng.easyphotos.ui.adapter;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +8,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.huantansheng.easyphotos.R;
 import com.huantansheng.easyphotos.constant.Type;
@@ -24,6 +24,7 @@ import com.huantansheng.easyphotos.utils.media.DurationUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 专辑相册适配器
@@ -248,6 +249,10 @@ public class PhotosAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return dataList.size();
+    }
+
+    public List<Object> getData() {
+        return dataList;
     }
 
     @Override
