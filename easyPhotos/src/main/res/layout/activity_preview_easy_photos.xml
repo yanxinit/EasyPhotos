@@ -94,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@color/easy_photos_bar_primary_translation"
+            android:background="@drawable/bg_bottom_bar"
             android:clickable="true"
             android:fitsSystemWindows="true"
             android:focusable="true">
@@ -131,33 +131,32 @@
             <TextView
                 android:id="@+id/tv_original"
                 android:layout_width="wrap_content"
-                android:layout_height="56dp"
+                android:layout_height="48dp"
                 android:layout_below="@+id/fl_fragment"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/original_easy_photos"
                 android:textColor="@color/easy_photos_fg_primary"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
-
 
             <TextView
                 android:id="@+id/tv_selector"
                 android:layout_width="wrap_content"
-                android:layout_height="56dp"
+                android:layout_height="48dp"
                 android:layout_below="@+id/fl_fragment"
                 android:layout_toStartOf="@+id/iv_selector"
                 android:layout_toLeftOf="@+id/iv_selector"
                 android:gravity="center"
                 android:text="@string/selector_easy_photos"
                 android:textColor="@color/easy_photos_fg_primary"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/iv_selector"
                 android:layout_width="wrap_content"
-                android:layout_height="56dp"
+                android:layout_height="48dp"
                 android:layout_below="@+id/fl_fragment"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
