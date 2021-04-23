@@ -436,6 +436,16 @@ public class AlbumBuilder {
         return AlbumBuilder.this;
     }
 
+    public AlbumBuilder setSelectAll(boolean shouldShow) {
+        Setting.showSelectAll = shouldShow;
+        return AlbumBuilder.this;
+    }
+
+    public AlbumBuilder setMax(boolean shouldShow) {
+        Setting.showMax = shouldShow;
+        return AlbumBuilder.this;
+    }
+
     private void setSettingParams() {
         switch (startupType) {
             case CAMERA:

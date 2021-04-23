@@ -1,7 +1,8 @@
 package com.huantansheng.easyphotos.setting;
 
-import androidx.annotation.IntDef;
 import android.view.View;
+
+import androidx.annotation.IntDef;
 
 import com.huantansheng.easyphotos.constant.Type;
 import com.huantansheng.easyphotos.engine.ImageEngine;
@@ -56,6 +57,8 @@ public class Setting {
     public static int complexVideoCount = 0;
     public static int complexPictureCount = 0;
 
+    public static boolean showMax = true;
+
     @Retention(RetentionPolicy.SOURCE)
     @IntDef(value = {LIST_FIRST, BOTTOM_RIGHT})
     public @interface Location {
@@ -91,6 +94,8 @@ public class Setting {
         complexSingleType = false;
         complexVideoCount = 0;
         complexPictureCount = 0;
+        showMax = true;
+        showSelectAll = true;
     }
 
     public static boolean isFilter(String type) {
