@@ -56,7 +56,6 @@ import com.huantansheng.easyphotos.setting.Setting;
 import com.huantansheng.easyphotos.ui.adapter.AlbumItemsAdapter;
 import com.huantansheng.easyphotos.ui.adapter.PhotosAdapter;
 import com.huantansheng.easyphotos.ui.dialog.LoadingDialog;
-import com.huantansheng.easyphotos.ui.widget.PressedTextView;
 import com.huantansheng.easyphotos.utils.Color.ColorUtils;
 import com.huantansheng.easyphotos.utils.String.StringUtils;
 import com.huantansheng.easyphotos.utils.bitmap.BitmapUtils;
@@ -92,7 +91,7 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
     private AlbumItemsAdapter albumItemsAdapter;
     private RelativeLayout rootViewAlbumItems;
 
-    private PressedTextView tvAlbumItems, tvDone, tvPreview;
+    private TextView tvAlbumItems, tvDone, tvPreview;
     private TextView tvOriginal;
     private AnimatorSet setHide;
     private AnimatorSet setShow;

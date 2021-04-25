@@ -52,7 +52,6 @@ public class PreviewActivity extends AppCompatActivity implements PreviewPhotosA
         act.startActivityForResult(intent, Code.REQUEST_PREVIEW_ACTIVITY);
     }
 
-
     /**
      * 一些旧设备在UI小部件更新之间需要一个小延迟
      * and a change of the status and navigation bar.
@@ -449,8 +448,11 @@ public class PreviewActivity extends AppCompatActivity implements PreviewPhotosA
             }
             flFragment.setVisibility(View.VISIBLE);
             tvDone.setVisibility(View.VISIBLE);
-            tvDone.setText(getString(R.string.selector_action_done_easy_photos, Result.count(),
-                    Setting.count));
+            if (Setting.showMax) {
+                tvDone.setText(getString(R.string.selector_action_done_easy_photos, Result.count(), Setting.count));
+            } else {
+                tvDone.setText(getString(R.string.selector_action_done_easy_photos_without_all, Result.count()));
+            }
         }
     }
 
