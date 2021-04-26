@@ -798,6 +798,8 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
         } else if (R.id.tv_select_all == id) {
             Result.removeAll();
             for (Object o : photosAdapter.getData()) {
+                if (!(o instanceof Photo))
+                    continue;
                 if (Result.count() >= Setting.count)
                     break;
                 Result.addPhoto((Photo) o);
