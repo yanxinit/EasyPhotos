@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="EasyPhotosFullscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="EasyPhotosFullscreenTheme" parent="EasyPhotosBaseTheme">
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowBackground">@null</item>
         <item name="android:windowTranslucentStatus">false</item>
@@ -10,7 +10,7 @@
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>
 
-    <style name="EasyPhotosTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="EasyPhotosTheme" parent="EasyPhotosBaseTheme">
         <item name="android:windowIsTranslucent">false</item>
     </style>
 
