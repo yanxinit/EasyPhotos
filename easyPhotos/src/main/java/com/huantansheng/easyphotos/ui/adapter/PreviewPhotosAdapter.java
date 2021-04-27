@@ -67,7 +67,7 @@ public class PreviewPhotosAdapter extends RecyclerView.Adapter<PreviewPhotosAdap
 
         if (type.contains(Type.VIDEO)) {
             holder.ivPhotoView.setVisibility(View.VISIBLE);
-            Setting.imageEngine.loadPhoto(holder.ivPhotoView.getContext(), uri, holder.ivPhotoView);
+            Setting.imageEngine.loadPhoto(holder.ivPhotoView.getContext(), uri, holder.ivPhotoView, false);
             holder.ivPlay.setVisibility(View.VISIBLE);
             holder.ivPlay.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -84,8 +84,7 @@ public class PreviewPhotosAdapter extends RecyclerView.Adapter<PreviewPhotosAdap
                 holder.ivLongPhoto.setImage(ImageSource.uri(path));
             } else {
                 holder.ivPhotoView.setVisibility(View.VISIBLE);
-                Setting.imageEngine.loadPhoto(holder.ivPhotoView.getContext(), uri,
-                        holder.ivPhotoView);
+                Setting.imageEngine.loadPhoto(holder.ivPhotoView.getContext(), uri, holder.ivPhotoView, false);
             }
         }
 

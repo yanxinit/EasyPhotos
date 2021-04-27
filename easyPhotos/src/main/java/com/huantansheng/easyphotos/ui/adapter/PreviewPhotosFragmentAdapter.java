@@ -51,11 +51,11 @@ public class PreviewPhotosFragmentAdapter extends RecyclerView.Adapter<PreviewPh
             holder.tvType.setText(R.string.gif_easy_photos);
             holder.tvType.setVisibility(View.VISIBLE);
         } else if (Setting.showVideo && type.contains(Type.VIDEO)) {
-            Setting.imageEngine.loadPhoto(holder.ivPhoto.getContext(), uri, holder.ivPhoto);
+            Setting.imageEngine.loadPhoto(holder.ivPhoto.getContext(), uri, holder.ivPhoto,false);
             holder.tvType.setText(DurationUtils.format(duration));
             holder.tvType.setVisibility(View.VISIBLE);
         } else {
-            Setting.imageEngine.loadPhoto(holder.ivPhoto.getContext(), uri, holder.ivPhoto);
+            Setting.imageEngine.loadPhoto(holder.ivPhoto.getContext(), uri, holder.ivPhoto,false);
             holder.tvType.setVisibility(View.GONE);
         }
 

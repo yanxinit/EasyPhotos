@@ -1,14 +1,15 @@
 package com.huantansheng.easyphotos.ui.adapter;
 
 import android.content.Context;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.huantansheng.easyphotos.R;
 import com.huantansheng.easyphotos.models.ad.AdViewHolder;
@@ -71,7 +72,7 @@ public class AlbumItemsAdapter extends RecyclerView.Adapter {
                 ((AlbumItemsViewHolder) holder).mRoot.setPadding(padding, padding, padding, 0);
             }
             AlbumItem item = (AlbumItem) dataList.get(p);
-            Setting.imageEngine.loadPhoto(((AlbumItemsViewHolder) holder).ivAlbumCover.getContext(), item.coverImageUri, ((AlbumItemsViewHolder) holder).ivAlbumCover);
+            Setting.imageEngine.loadPhoto(((AlbumItemsViewHolder) holder).ivAlbumCover.getContext(), item.coverImageUri, ((AlbumItemsViewHolder) holder).ivAlbumCover, true);
             ((AlbumItemsViewHolder) holder).tvAlbumName.setText(item.name);
             ((AlbumItemsViewHolder) holder).tvAlbumPhotosCount.setText(String.valueOf(item.photos.size()));
             if (selectedPosition == p) {

@@ -88,13 +88,13 @@ public class PhotosAdapter extends RecyclerView.Adapter {
                 ((PhotoViewHolder) holder).tvType.setVisibility(View.VISIBLE);
                 ((PhotoViewHolder) holder).ivVideo.setVisibility(View.GONE);
             } else if (Setting.showVideo && type.contains(Type.VIDEO)) {
-                Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto);
+                Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto, true);
                 ((PhotoViewHolder) holder).tvType.setText(DurationUtils.format(duration));
                 ((PhotoViewHolder) holder).tvType.setVisibility(View.VISIBLE);
                 ((PhotoViewHolder) holder).ivVideo.setVisibility(View.VISIBLE);
 
             } else {
-                Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto);
+                Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto, true);
                 ((PhotoViewHolder) holder).tvType.setVisibility(View.GONE);
                 ((PhotoViewHolder) holder).ivVideo.setVisibility(View.GONE);
             }

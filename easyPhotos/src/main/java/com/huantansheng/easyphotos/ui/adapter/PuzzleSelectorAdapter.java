@@ -59,11 +59,11 @@ public class PuzzleSelectorAdapter extends RecyclerView.Adapter {
             ((PhotoViewHolder) holder).tvType.setText(R.string.gif_easy_photos);
             ((PhotoViewHolder) holder).tvType.setVisibility(View.VISIBLE);
         } else if (Setting.showVideo && type.contains(Type.VIDEO)) {
-            Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto);
+            Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto,true);
             ((PhotoViewHolder) holder).tvType.setText(DurationUtils.format(duration));
             ((PhotoViewHolder) holder).tvType.setVisibility(View.VISIBLE);
         } else {
-            Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto);
+            Setting.imageEngine.loadPhoto(((PhotoViewHolder) holder).ivPhoto.getContext(), uri, ((PhotoViewHolder) holder).ivPhoto,true);
             ((PhotoViewHolder) holder).tvType.setVisibility(View.GONE);
         }
 
