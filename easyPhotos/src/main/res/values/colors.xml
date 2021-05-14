@@ -33,7 +33,7 @@
     <color name="easy_photos_fg_accent">#00AA00</color>//578fff 前景突出色，如发送按钮的背景色，选中状态的颜色
 
     <!--背景色-->
-    <color name="easy_photos_bg_primary">#000000</color>//f9f9f9 背景色，如每个activity的背景色，相册的图片间隔线颜色
+    <color name="easy_photos_bg_primary">#FFFFFF</color>//f9f9f9 背景色，如每个activity的背景色，相册的图片间隔线颜色
 
     <!--操作栏颜色-->
     <color name="easy_photos_bar_primary">#393a3f</color>//ffffff 操作栏主色，如相册页顶部和底部操作栏
