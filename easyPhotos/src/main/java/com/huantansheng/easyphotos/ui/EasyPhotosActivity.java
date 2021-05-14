@@ -39,7 +39,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.exifinterface.media.ExifInterface;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -707,12 +706,7 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
         tvAlbumItems.setText(albumModel.getAlbumItems().get(0).name);
         tvDone = findViewById(R.id.tv_done);
         rvPhotos = findViewById(R.id.rv_photos);
-        DividerItemDecoration v = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
-        v.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider_grid_easy_photos));
-        DividerItemDecoration h = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
-        h.setDrawable(ContextCompat.getDrawable(this, R.drawable.divider_grid_easy_photos));
-        rvPhotos.addItemDecoration(v);
-        rvPhotos.addItemDecoration(h);
+        rvPhotos.addItemDecoration(new ItemDecorationAlbumColumns(dpToPx(2), columns));
         ((SimpleItemAnimator) rvPhotos.getItemAnimator()).setSupportsChangeAnimations(false);
         //去除item更新的闪光
         photoList.clear();
@@ -755,6 +749,10 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
         setClick(R.id.iv_album_items, R.id.tv_clear, R.id.iv_second_menu, R.id.tv_puzzle, R.id.tv_select_all);
         setClick(tvAlbumItems, rootViewAlbumItems, tvDone, tvOriginal, tvPreview, ivCamera);
 
+    }
+
+    private int dpToPx(int dps) {
+        return Math.round(getResources().getDisplayMetrics().density * dps);
     }
 
     private void hideActionBar() {

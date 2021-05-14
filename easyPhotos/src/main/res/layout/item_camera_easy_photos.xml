@@ -8,7 +8,6 @@
         android:id="@+id/fl_camera"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="1.2dp"
         android:background="@drawable/bg_camera_corner_easy_photos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
