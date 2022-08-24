@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -118,6 +119,11 @@ public class PhotosAdapter extends RecyclerView.Adapter {
 
             ((PhotoViewHolder) holder).tvFileSize.setText(formatSizeDesc(item.size));
             ((PhotoViewHolder) holder).tvResolution.setText(item.width + "x" + item.height);
+            if (Setting.useWidth) {
+                ((PhotoViewHolder) holder).layoutSizeContainer.setVisibility(View.VISIBLE);
+            } else {
+                ((PhotoViewHolder) holder).layoutSizeContainer.setVisibility(View.GONE);
+            }
 
             ((PhotoViewHolder) holder).vSelector.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -307,6 +313,7 @@ public class PhotosAdapter extends RecyclerView.Adapter {
         final ImageView ivVideo;
         final TextView tvFileSize;
         final TextView tvResolution;
+        final LinearLayout layoutSizeContainer;
 
         PhotoViewHolder(View itemView) {
             super(itemView);
@@ -317,6 +324,7 @@ public class PhotosAdapter extends RecyclerView.Adapter {
             this.ivVideo = itemView.findViewById(R.id.iv_play);
             this.tvFileSize = itemView.findViewById(R.id.tv_file_size);
             this.tvResolution = itemView.findViewById(R.id.tv_resolution);
+            this.layoutSizeContainer = itemView.findViewById(R.id.layout_size_container);
         }
     }
 }
