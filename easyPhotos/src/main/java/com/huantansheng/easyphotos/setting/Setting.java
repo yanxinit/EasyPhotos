@@ -1,8 +1,7 @@
 package com.huantansheng.easyphotos.setting;
 
-import android.view.View;
-
 import androidx.annotation.IntDef;
+import android.view.View;
 
 import com.huantansheng.easyphotos.constant.Type;
 import com.huantansheng.easyphotos.engine.ImageEngine;
@@ -56,6 +55,8 @@ public class Setting {
     public static boolean complexSingleType = false;
     public static int complexVideoCount = 0;
     public static int complexPictureCount = 0;
+    //当传入已选中图片时，是否按照之前选中的顺序排序
+    public static boolean isSequentialSelectedPhotos = true;
 
     public static boolean showMax = true;
 
@@ -96,6 +97,7 @@ public class Setting {
         complexPictureCount = 0;
         showMax = true;
         showSelectAll = true;
+        isSequentialSelectedPhotos = true;
     }
 
     public static boolean isFilter(String type) {

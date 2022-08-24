@@ -1,8 +1,12 @@
 # EasyPhotos    
 [![](https://jitpack.io/v/HuanTanSheng/EasyPhotos.svg)](https://jitpack.io/#HuanTanSheng/EasyPhotos)    
 
-QQ交流群：[288600953](https://jq.qq.com/?_wv=1027&k=5QGgCDe)    
-[demo下载](https://raw.githubusercontent.com/HuanTanSheng/EasyPhotos/master/demo/release/demo-release.apk)
+QQ交流群：[EasyPhotos开发交流群：288600953](https://jq.qq.com/?_wv=1027&k=5QGgCDe)    (已满)     
+
+QQ交流群：[EasyPhotos开发交流群二群：212324053](https://jq.qq.com/?_wv=1027&k=t5JZYhwa)       
+
+[demo下载](https://raw.githubusercontent.com/HuanTanSheng/EasyPhotos/master/demo/release/demo-release.apk)     
+
 若无法下载demo，可以在QQ交流群的群文件下载，文件名为demo-release，下载最新的即可。
 
 
@@ -80,7 +84,7 @@ allprojects {
 ```gradle
 dependencies {  
 
-        implementation 'com.github.HuanTanSheng:EasyPhotos:3.1.3' //androidx版本，支持android 10、11，永久维护
+        implementation 'com.github.HuanTanSheng:EasyPhotos:3.1.5'  //androidx版本，支持android 10、11，永久维护
       
         //implementation 'com.github.HuanTanSheng:EasyPhotos:2.4.5' //还没有升级到androidx的同学可以用这个版本，但不支持android 10，暂停维护
    
@@ -132,7 +136,8 @@ dependencies {
 * [12-配置ImageEngine，支持所有图片加载库](https://github.com/HuanTanSheng/EasyPhotos/wiki/12-%E9%85%8D%E7%BD%AEImageEngine%EF%BC%8C%E6%94%AF%E6%8C%81%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%BA%93)
 
     
-QQ交流群：[288600953](https://jq.qq.com/?_wv=1027&k=5QGgCDe)    
+QQ交流群：[288600953](https://jq.qq.com/?_wv=1027&k=5QGgCDe)    (已满)
+QQ交流群：[EasyPhotos开发交流群二群：212324053](https://jq.qq.com/?_wv=1027&k=t5JZYhwa)
     
        
            
@@ -146,10 +151,18 @@ QQ交流群：[288600953](https://jq.qq.com/?_wv=1027&k=5QGgCDe)
 ## 编者语    
 
 EasyPhotos目前还在更新，欢迎各种Issues以及加群讨论，只是目前本人精力以及本职工作原因，更新不会频繁，只能保证不定期查看反馈统一修改，希望各位理解，感谢！  
-QQ交流群：[288600953](https://jq.qq.com/?_wv=1027&k=5QGgCDe)      
+QQ交流群：[288600953](https://jq.qq.com/?_wv=1027&k=5QGgCDe) （已满）
+QQ交流群：[EasyPhotos开发交流群二群：212324053](https://jq.qq.com/?_wv=1027&k=t5JZYhwa)
 
 
-## 更新日志
+## 更新日志    
+
+**3.1.5：**
+- 新增：public AlbumBuilder setSelectedPhotos(ArrayList<Photo> selectedPhotos,boolean isSequentialSelectedPhotos)    
+       可自定义当传入已选中图片时，是否按照之前选中的顺序排序
+  
+**3.1.4：**    
+- 优化：多类型互斥选择时，最大选择数按照已选类型动态匹配 
 
 **3.1.3：**
 - 优化：线程安全

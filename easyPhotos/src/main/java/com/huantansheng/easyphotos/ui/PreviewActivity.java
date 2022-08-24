@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.huantansheng.easyphotos.R;
 import com.huantansheng.easyphotos.constant.Code;
 import com.huantansheng.easyphotos.constant.Key;
+import com.huantansheng.easyphotos.constant.Type;
 import com.huantansheng.easyphotos.models.album.AlbumModel;
 import com.huantansheng.easyphotos.models.album.entity.Photo;
 import com.huantansheng.easyphotos.result.Result;
@@ -448,6 +449,29 @@ public class PreviewActivity extends AppCompatActivity implements PreviewPhotosA
             }
             flFragment.setVisibility(View.VISIBLE);
             tvDone.setVisibility(View.VISIBLE);
+
+            if (Result.isEmpty()) {
+                return;
+            }
+
+            if (Setting.complexSelector) {
+                if (Setting.complexSingleType) {
+                    if (Result.getPhotoType(0).contains(Type.VIDEO)) {
+                        if (Setting.showMax) {
+                            tvDone.setText(getString(R.string.selector_action_done_easy_photos, Result.count(), Setting.complexVideoCount));
+                        } else {
+                            tvDone.setText(getString(R.string.selector_action_done_easy_photos_without_all, Result.count()));
+                        }
+                        return;
+                    }
+                    if (Setting.showMax) {
+                        tvDone.setText(getString(R.string.selector_action_done_easy_photos, Result.count(), Setting.complexPictureCount));
+                    } else {
+                        tvDone.setText(getString(R.string.selector_action_done_easy_photos_without_all, Result.count()));
+                    }
+                    return;
+                }
+            }
             if (Setting.showMax) {
                 tvDone.setText(getString(R.string.selector_action_done_easy_photos, Result.count(), Setting.count));
             } else {
