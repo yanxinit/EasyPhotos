@@ -22,6 +22,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.davemorrissey.labs:subsampling-scale-image-view-androidx:3.10.0'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    compileOnly 'com.blankj:utilcodex:1.30.6'
 }
 
 //// 指定编码

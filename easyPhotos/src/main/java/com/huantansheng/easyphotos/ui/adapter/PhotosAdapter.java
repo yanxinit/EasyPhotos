@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.blankj.utilcode.util.ConvertUtils;
 import com.huantansheng.easyphotos.R;
 import com.huantansheng.easyphotos.constant.Type;
 import com.huantansheng.easyphotos.models.ad.AdViewHolder;
@@ -115,6 +116,8 @@ public class PhotosAdapter extends RecyclerView.Adapter {
                 }
             });
 
+            ((PhotoViewHolder) holder).tvFileSize.setText(formatSizeDesc(item.size));
+            ((PhotoViewHolder) holder).tvResolution.setText(item.width + "x" + item.height);
 
             ((PhotoViewHolder) holder).vSelector.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -199,6 +202,10 @@ public class PhotosAdapter extends RecyclerView.Adapter {
                 }
             });
         }
+    }
+
+    private String formatSizeDesc(long size) {
+        return ConvertUtils.byte2FitMemorySize(size);
     }
 
     public void clearAd() {
@@ -298,6 +305,8 @@ public class PhotosAdapter extends RecyclerView.Adapter {
         final View vSelector;
         final TextView tvType;
         final ImageView ivVideo;
+        final TextView tvFileSize;
+        final TextView tvResolution;
 
         PhotoViewHolder(View itemView) {
             super(itemView);
@@ -306,6 +315,8 @@ public class PhotosAdapter extends RecyclerView.Adapter {
             this.vSelector = itemView.findViewById(R.id.v_selector);
             this.tvType = itemView.findViewById(R.id.tv_type);
             this.ivVideo = itemView.findViewById(R.id.iv_play);
+            this.tvFileSize = itemView.findViewById(R.id.tv_file_size);
+            this.tvResolution = itemView.findViewById(R.id.tv_resolution);
         }
     }
 }
