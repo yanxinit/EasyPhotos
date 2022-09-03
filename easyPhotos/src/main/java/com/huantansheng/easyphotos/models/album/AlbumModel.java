@@ -9,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import android.util.Log;
 
 import androidx.core.content.PermissionChecker;
 
@@ -170,6 +169,10 @@ public class AlbumModel {
             boolean hasTime = durationCol > 0;
 
             do {
+                if (cursor.getColumnCount() == 0) {
+                    continue;
+                }
+
                 long id = cursor.getLong(0);
                 String path = cursor.getString(1);
                 String name = cursor.getString(2);
@@ -295,8 +298,8 @@ public class AlbumModel {
                 ArrayList<Photo> tempList = new ArrayList<>(photoSize);
                 for (int i = 0; i < selectSize; i++) {
                     for (int j = 0; j < photoSize; j++) {
-                        if (Result.photos.get(j).path.equals(Setting.selectedPhotos.get(i).path)){
-                            tempList.add(i,Result.photos.get(j));
+                        if (Result.photos.get(j).path.equals(Setting.selectedPhotos.get(i).path)) {
+                            tempList.add(i, Result.photos.get(j));
                         }
                     }
                 }
