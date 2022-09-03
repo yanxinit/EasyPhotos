@@ -45,6 +45,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
 import com.huantansheng.easyphotos.EasyPhotos;
+import com.huantansheng.easyphotos.EasyPhotosResultHolder;
 import com.huantansheng.easyphotos.R;
 import com.huantansheng.easyphotos.constant.Code;
 import com.huantansheng.easyphotos.constant.Key;
@@ -893,7 +894,8 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
         Intent intent = new Intent();
         Result.processOriginal();
         resultList.addAll(Result.photos);
-        intent.putParcelableArrayListExtra(EasyPhotos.RESULT_PHOTOS, resultList);
+        EasyPhotosResultHolder.getInstance().setResult(resultList);
+        //intent.putParcelableArrayListExtra(EasyPhotos.RESULT_PHOTOS, resultList);
         intent.putExtra(EasyPhotos.RESULT_SELECTED_ORIGINAL,
                 Setting.selectedOriginal);
         setResult(RESULT_OK, intent);
