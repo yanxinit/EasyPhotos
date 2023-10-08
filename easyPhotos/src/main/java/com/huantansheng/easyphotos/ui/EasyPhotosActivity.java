@@ -577,8 +577,8 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
                             Intent data = new Intent();
                             photo.selectedOriginal = Setting.selectedOriginal;
                             resultList.add(photo);
-
-                            data.putParcelableArrayListExtra(EasyPhotos.RESULT_PHOTOS, resultList);
+                            EasyPhotosResultHolder.getInstance().setResult(resultList);
+//                            data.putParcelableArrayListExtra(EasyPhotos.RESULT_PHOTOS, resultList);
                             data.putExtra(EasyPhotos.RESULT_SELECTED_ORIGINAL,
                                     Setting.selectedOriginal);
                             setResult(RESULT_OK, data);
@@ -653,8 +653,8 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
 
                             photo.selectedOriginal = Setting.selectedOriginal;
                             resultList.add(photo);
-
-                            data.putParcelableArrayListExtra(EasyPhotos.RESULT_PHOTOS, resultList);
+                            EasyPhotosResultHolder.getInstance().setResult(resultList);
+//                            data.putParcelableArrayListExtra(EasyPhotos.RESULT_PHOTOS, resultList);
 
                             data.putExtra(EasyPhotos.RESULT_SELECTED_ORIGINAL,
                                     Setting.selectedOriginal);
